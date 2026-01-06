@@ -3,7 +3,7 @@ class Record {
   String name;
   int age;
   String address;
-  String role; // Employee / Student
+  String role;
 
   Record({
     this.id,
@@ -13,7 +13,6 @@ class Record {
     required this.role,
   });
 
-  // Convert object to Map (for SQLite)
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -24,7 +23,6 @@ class Record {
     };
   }
 
-  // Convert Map to object
   factory Record.fromMap(Map<String, dynamic> map) {
     return Record(
       id: map['id'],
