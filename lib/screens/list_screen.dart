@@ -60,6 +60,17 @@ class ListScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: ListTile(
+                          leading: IconButton(
+                            icon: Icon(
+                              provider.favoriteIds.contains(record.id)
+                                  ? Icons.star
+                                  : Icons.star_border,
+                              color: Colors.amber,
+                            ),
+                            onPressed: () {
+                              provider.toggleFavorite(record.id!);
+                            },
+                          ),
                           title: Text(
                             record.name,
                             style: TextStyle(
